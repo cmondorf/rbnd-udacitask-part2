@@ -1,5 +1,5 @@
 class LinkItem
-  # include Listable
+  include Listable
   attr_reader :description, :site_name
 
   def initialize(url, options={})
