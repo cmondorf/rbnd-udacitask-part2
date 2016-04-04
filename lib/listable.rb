@@ -7,8 +7,12 @@ module Listable
     if options[:class]=="TodoItem"
       options[:due] ? options[:due].strftime("%D") : "No due date"
       #placeholder for format date method for events
+    elsif options[:class]=="EventItem"
+      dates = options[:start_date].strftime("%D") if options[:start_date]
+      dates << " -- " + options[:end_date].strftime("%D") if options[:end_date]
+      dates = "N/A" if !dates
+      return dates
     end
-    #if due -> process as due
   end
 
   def format_priority
