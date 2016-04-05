@@ -7,7 +7,7 @@ class UdaciList
   end
   def add(type, description, options={})
     type = type.downcase
-    unless ["todo", "event", "link"].include? type 
+    unless ["todo", "event", "link"].include? type
       raise UdaciListErrors::InvalidItemType, "This is an unkown or invalide type."
     end
     @items.push TodoItem.new(description, options) if type == "todo"
@@ -15,6 +15,9 @@ class UdaciList
     @items.push LinkItem.new(description, options) if type == "link"
   end
   def delete(index)
+    if index > @items.length
+      raise UdaciListErrors::IndexExceedsListSize, "This index number is too high."
+    end
     @items.delete_at(index - 1)
   end
   def all
