@@ -6,6 +6,11 @@ class TodoItem
     @description = description
     @class = "TodoItem"
     @due = options[:due] ? Date.parse(options[:due]) : options[:due]
+    if options[:priority]
+      unless ["low", "medium", "high"].include? options[:priority]
+        raise UdaciListErrors::InvalidPriorityValue, "Invalid priority. Please select low, medium, high, or leave blank."
+      end
+    end
     @priority = options[:priority]
   end
 
