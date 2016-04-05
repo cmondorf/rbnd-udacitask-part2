@@ -7,6 +7,9 @@ class UdaciList
   end
   def add(type, description, options={})
     type = type.downcase
+    unless ["todo", "event", "link"].include? type 
+      raise UdaciListErrors::InvalidItemType, "This is an unkown or invalide type."
+    end
     @items.push TodoItem.new(description, options) if type == "todo"
     @items.push EventItem.new(description, options) if type == "event"
     @items.push LinkItem.new(description, options) if type == "link"
