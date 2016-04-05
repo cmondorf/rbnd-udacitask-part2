@@ -29,4 +29,10 @@ class UdaciList
       puts "#{position + 1}) #{item.details}"
     end
   end
+  def filter
+    @items.each_with_index do |item, position|
+      puts "#{position + 1}) #{item.details}"
+    end
+    #go through entries in list, return only those that match certain type
+  end
 end

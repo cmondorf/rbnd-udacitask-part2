@@ -6,7 +6,6 @@ module Listable
   def format_date(options={})
     if options[:class]=="TodoItem"
       options[:due] ? options[:due].strftime("%D") : "No due date"
-      #placeholder for format date method for events
     elsif options[:class]=="EventItem"
       dates = options[:start_date].strftime("%D") if options[:start_date]
       dates << " -- " + options[:end_date].strftime("%D") if options[:end_date]
@@ -16,9 +15,9 @@ module Listable
   end
 
   def format_priority(priority)
-    value = " ⇧" if priority == "high"
-    value = " ⇨" if priority == "medium"
-    value = " ⇩" if priority == "low"
+    value = " ⇧".colorize(:red) if priority == "high"
+    value = " ⇨".colorize(:yellow) if priority == "medium"
+    value = " ⇩".colorize(:green) if priority == "low"
     value = "" if !priority
     return value
   end

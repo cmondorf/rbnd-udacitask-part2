@@ -5,7 +5,7 @@ class TodoItem
   def initialize(description, options={})
     @description = description
     @class = "TodoItem"
-    @due = options[:due] ? Date.parse(options[:due]) : options[:due]
+    @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     if options[:priority]
       unless ["low", "medium", "high"].include? options[:priority]
         raise UdaciListErrors::InvalidPriorityValue, "Invalid priority. Please select low, medium, high, or leave blank."
