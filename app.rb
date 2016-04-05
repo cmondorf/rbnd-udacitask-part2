@@ -22,8 +22,8 @@ list.all
 
 # SHOULD CREATE AN UNTITLED LIST AND ADD ITEMS TO IT
 # --------------------------------------------------
-# new_list = UdaciList.new # Should create a list called "Untitled List"
-# new_list.add("todo", "Buy more dog food", due: "in 5 weeks", priority: "medium")
+new_list = UdaciList.new # Should create a list called "Untitled List"
+# new_list.add("todo", "Buy more dog food", due:"2016-01-30" , priority: "medium") #"in 5 weeks"
 # new_list.add("todo", "Go dancing", due: "in 2 hours")
 # new_list.add("todo", "Buy groceries", priority: "high")
 # new_list.add("event", "Birthday Party", start_date: "May 31")
@@ -40,7 +40,7 @@ list.all
 
 # DISPLAY UNTITLED LIST
 # ---------------------
-# new_list.all
+new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
