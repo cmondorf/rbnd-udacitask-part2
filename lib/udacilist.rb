@@ -29,10 +29,31 @@ class UdaciList
       puts "#{position + 1}) #{item.details}"
     end
   end
-  def filter
-    @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+
+  def type_match(type)
+    if type == "event"
+      return "EventItem"
+    elsif type == "todo"
+      return "TodoItem"
+    else
+      return "LinkItem"
     end
-    #go through entries in list, return only those that match certain type
   end
+
+
+  def filter(type)
+    @title = "Filtered list - #{type}"
+    puts "-" * @title.length
+    puts @title
+    puts "-" * @title.length
+    matched_type = type_match(type)
+    i = 1
+    @items.each_with_index do |item|
+      if item.class== matched_type
+        puts "#{i}) #{item.details}"
+        i += 1
+      end
+    end
+  end
+
 end
