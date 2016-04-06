@@ -12,6 +12,6 @@ class LinkItem
     @site_name ? @site_name : ""
   end
   def details
-    "(Link) " + format_description(@descrption) + "site name: " + format_name
+    "(Link) " + format_description(@description) + "site name: " + format_name
   end
 end
