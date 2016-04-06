@@ -1,13 +1,29 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+
+I used the terminal-table gem to present the lists in tables.
+
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Feature 1... lists appear in tables
+  b) Feature 2... a count of the items in each list appears next to the list title.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+
+  About two or three days.
+
 2. What was the most rewarding challenge you conquered?
+
+  Getting the gem to work was tricky. It wasn't always obvious to me what the explanations in the readme meant. I ended copying one of the examples into my own code and then gradually adjusting it until I could get it to do what I wanted.
+
 3. What two additional features did you build? Why?
+
+  The first feature was to present the lists as tables. This just makes them easier to read.
+
+  The second was to add a list item count next to the list title. This should be helpful if lists become a lot longer.
+
 4. Where do you still have room to grow?
+
+  Knowing when something is a class or instance variable and how to access it, continues to be a challenge. Also, I still find loops to iterate through arrays tricky.
