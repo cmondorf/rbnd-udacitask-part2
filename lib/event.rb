@@ -10,6 +10,6 @@ class EventItem
   end
 
   def details
-    format_description(@description) + "event dates: " + format_date(:class => @class, :start_date => @start_date)
+    "(Event) " + format_description(@description) + "event dates: " + format_date(:class => @class, :start_date => @start_date)
   end
 end

@@ -6,7 +6,7 @@ I used the terminal-table gem to present the lists in tables.
 
 2. Describe the 2 features you added to the project.
   a) Feature 1... lists appear in tables
-  b) Feature 2... a count of the items in each list appears next to the list title.
+  b) Feature 2... it is now possible to delete several list items at once.
 
 # REFLECTIONS
 # -------------------------------------------------------

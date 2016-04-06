@@ -15,6 +15,7 @@ class TodoItem
   end
 
   def details
+    "(Todo) " +
     format_description(@description) + "due: " +
     format_date(:class => @class, :due => @due) +
     format_priority(@priority)

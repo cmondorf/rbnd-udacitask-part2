@@ -14,12 +14,18 @@ class UdaciList
     @items.push EventItem.new(description, options) if type == "event"
     @items.push LinkItem.new(description, options) if type == "link"
   end
-  def delete(index)
-    if index > @items.length
-      raise UdaciListErrors::IndexExceedsListSize, "This index number is too high."
+
+  def delete(*args)
+    counter = 0
+    while counter < args.length
+      if args[counter]> @items.length
+        raise UdaciListErrors::IndexExceedsListSize, "This index number #{args[counter]} is too high."
+      end
+      @items.delete_at(args[counter]-1)
+      counter += 1
     end
-    @items.delete_at(index - 1)
   end
+
   def all
     rows = []
     @title = "Untitled List" if !@title
@@ -39,7 +45,6 @@ class UdaciList
       return "LinkItem"
     end
   end
-
 
   def filter(type)
     rows = []
