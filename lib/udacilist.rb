@@ -21,13 +21,13 @@ class UdaciList
     @items.delete_at(index - 1)
   end
   def all
+    rows = []
     @title = "Untitled List" if !@title
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+      rows << [ "#{position + 1})", "#{item.details}"]
     end
+    table = Terminal::Table.new :title => "#{@title}, Total entries: #{@items.length}", :headings => ['Item', 'Details'], :rows => rows
+    puts table
   end
 
   def type_match(type)
@@ -42,18 +42,18 @@ class UdaciList
 
 
   def filter(type)
+    rows = []
     @title = "Filtered list - #{type}"
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
     matched_type = type_match(type)
     i = 1
     @items.each_with_index do |item|
       if item.class== matched_type
-        puts "#{i}) #{item.details}"
+        rows << [ "#{i})", "#{item.details}"]
         i += 1
       end
     end
+    table = Terminal::Table.new :title => "#{@title}, Total entries: #{i-1}", :headings => ['Item', 'Details'], :rows => rows
+    puts table
   end
 
 end
