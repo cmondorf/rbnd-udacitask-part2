@@ -61,4 +61,12 @@ class UdaciList
     puts table
   end
 
+  def complete(index)
+    if @items[index-1].class != type_match("todo")
+      raise UdaciListErrors::ItemIsNotToDo, "This item is not a todo, it cannot be completed!"
+    else
+      @items[index-1].complete
+    end
+  end
+
 end

@@ -9,4 +9,7 @@ module UdaciListErrors
     class InvalidPriorityValue < StandardError
     end
 
+    class ItemIsNotToDo < StandardError
+    end
+
 end

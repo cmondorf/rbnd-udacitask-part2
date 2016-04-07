@@ -5,6 +5,7 @@ class TodoItem
   def initialize(description, options={})
     @description = description
     @class = "TodoItem"
+    @completed = false
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     if options[:priority]
       unless ["low", "medium", "high"].include? options[:priority]
@@ -20,4 +21,11 @@ class TodoItem
     format_date(:class => @class, :due => @due) +
     format_priority(@priority)
   end
+
+  def complete
+    @completed = true
+    @description += " - completed!"
+  end
+
+
 end
