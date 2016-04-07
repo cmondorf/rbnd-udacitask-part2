@@ -21,9 +21,11 @@ I used the terminal-table gem to present the lists in tables.
 
 3. What two additional features did you build? Why?
 
-  The first feature was to present the lists as tables. This just makes them easier to read.
+  One feature was a way to delete more than one feature at a time.
 
   The second was to add a list item count next to the list title. This should be helpful if lists become a lot longer.
+
+  There is actually a third feature in there that makes it possible to mark todo items as complete. If another item type has this function called on it, an error is generated.
 
 4. Where do you still have room to grow?
 
